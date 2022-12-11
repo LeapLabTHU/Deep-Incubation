@@ -307,7 +307,7 @@ def save_model(args, epoch, model_without_ddp, optimizer, loss_scaler, lr_schedu
         to_save = {
             'model': model_without_ddp.state_dict(),
             'model_stages': [module.state_dict() for module in model_without_ddp.stages] if hasattr(
-                model_without_ddp, 'model_stages') else [],
+                model_without_ddp, 'stages') else [],
             'optimizer': optimizer.state_dict(),
             'lr_scheduler': lr_scheduler.state_dict(),
             'epoch': epoch,
