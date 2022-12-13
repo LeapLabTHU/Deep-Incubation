@@ -142,6 +142,7 @@ args=(
 --update_freq 4
 --epochs 100 
 --warmup-epochs 0
+--clip-grad 1
 --drop-path 0.1  # for base
 # --drop-path 0.5  # for large
 # --drop-path 0.6  # for huge
