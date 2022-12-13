@@ -14,6 +14,7 @@ This repository contains the official code for [Deep Model Assembling](https://a
 
 ## News
 
+- `Dec 13, 2022`: release pre-trained meta models for ViT-B, ViT-L and ViT-H on ImageNet-1K.
 - `Dec 10, 2022`: release code for training ViT-B, ViT-L and ViT-H on ImageNet-1K.
 
 ## Overview
@@ -61,11 +62,24 @@ torchrun \
 main.py ...
 ```
 
+
+### Preparing meta models
+
+We have released our pre-trained meta models at [🤗 Hugging Face](https://huggingface.co/nzl-thu/Model-Assembling), which can be directly used for modular training.
+
+|    Model   |                                                    Checkpoint                                                    |
+|:----------:|:----------------------------------------------------------------------------------------------------------------:|
+| ViT-B-Meta |  [🤗 HF link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/log_dir/PT_base/finished_checkpoint.pth)  |
+| ViT-L-Meta | [🤗 HF link]( https://huggingface.co/nzl-thu/Model-Assembling/blob/main/log_dir/PT_large/finished_checkpoint.pth) |
+| ViT-H-Meta |  [🤗 HF link]( https://huggingface.co/nzl-thu/Model-Assembling/blob/main/log_dir/PT_huge/finished_checkpoint.pth) |
+
+To train ViT-B for example, simply download the ViT-B-Meta model and save it to <code>./log_dir/PT_base/finished_checkpoint.pth</code>. Then follow the training script for modular training below.
+
 <details>
-<summary>Pre-training meta models (click to expand).</summary>
+<summary>Alternatively, you can also pre-train the meta models from scratch (click to expand)</summary>
 
 ```bash
-PHASE=PT  # Pre-training
+PHASE=PT
 MODEL=base  # for base
 # MODEL=large  # for large
 # MODEL=huge  # for huge
@@ -76,7 +90,7 @@ args=(
 --model vit_${MODEL}_patch16_224   # for base, large
 # --model vit_${MODEL}_patch14_224   # for huge
 --divided_depths 1 1 1 1 
---output_dir ./log_dir/${PHASE}/${MODEL}
+--output_dir ./log_dir/${PHASE}_${MODEL}
 
 --batch_size 256
 --epochs 300 
@@ -88,11 +102,11 @@ python -m torch.distributed.launch --nproc_per_node=${NGPUS} --master_port=23346
 
 </details>
 
-<details>
-<summary>Modular training (click to expand).</summary>
+
+### Modular training
 
 ```bash
-PHASE=MT  # Modular Training
+PHASE=MT
 MODEL=base DEPTH=12  # for base
 # MODEL=large DEPTH=24  # for large
 # MODEL=huge DEPTH=32  # for huge
@@ -118,13 +132,10 @@ python -m torch.distributed.launch --nproc_per_node=${NGPUS} --master_port=23346
 
 ```
 
-</details>
-
-<details>
-<summary>Assemble & Fine-tuning (click to expand).</summary>
+### Assemble & Fine-tuning
 
 ```bash
-PHASE=FT  # Assemble & Fine-tuning
+PHASE=FT
 MODEL=base DEPTH=12  # for base
 # MODEL=large DEPTH=24  # for large
 # MODEL=huge DEPTH=32  # for huge
@@ -150,8 +161,6 @@ args=(
 
 python -m torch.distributed.launch --nproc_per_node=${NGPUS} --master_port=23346 --use_env main.py "${args[@]}"
 ```
-
-</details>
 
 ## Results
 
