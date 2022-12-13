@@ -148,7 +148,7 @@ args=(
 # --drop-path 0.6  # for huge
 )
 
-python -m torch.distributed.launch --nproc_per_node=${NGPUS} --master_port=23346 --use_env main.py "${args[@]}
+python -m torch.distributed.launch --nproc_per_node=${NGPUS} --master_port=23346 --use_env main.py "${args[@]}"
 ```
 
 </details>
