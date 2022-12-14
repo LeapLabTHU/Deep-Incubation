@@ -73,7 +73,7 @@ We have released our pre-trained meta models at [🤗 Hugging Face](https://hugg
 | ViT-L-Meta | [🤗 HF link]( https://huggingface.co/nzl-thu/Model-Assembling/blob/main/log_dir/PT_large/finished_checkpoint.pth) |
 | ViT-H-Meta |  [🤗 HF link]( https://huggingface.co/nzl-thu/Model-Assembling/blob/main/log_dir/PT_huge/finished_checkpoint.pth) |
 
-To train ViT-B for example, simply download the ViT-B-Meta model and save it to <code>./log_dir/PT_base/finished_checkpoint.pth</code>. Then follow the training script for modular training below.
+To train ViT-B for example, simply download the ViT-B-Meta model and save it to <code>./log_dir/PT_base/finished_checkpoint.pth</code>. Then follow the training script below for modular training.
 
 <details>
 <summary>Alternatively, you can also pre-train the meta models from scratch (click to expand)</summary>
