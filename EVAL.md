@@ -3,9 +3,9 @@ We have released our pre-trained models at [🤗 Hugging Face](https://huggingfa
 
 | model | image size | #param. | top-1 acc. | checkpoint                                                                                        |
 |-------|------------|---------|------------|---------------------------------------------------------------------------------------------------|
-| ViT-B | 224        | 87M     | 82.4%      | [🤗 HF   link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/pretrained/vit_base.pth)  |
-| ViT-L | 224        | 304M    | 83.9%      | [🤗 HF   link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/pretrained/vit_large.pth) |
-| ViT-H | 224        | 632M    | 84.3%      | [🤗 HF   link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/pretrained/vit_huge.pth)  |
+| ViT-B | 224x224        | 87M     | 82.4%      | [🤗 HF   link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/pretrained/vit_base.pth)  |
+| ViT-L | 224x224        | 304M    | 83.9%      | [🤗 HF   link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/pretrained/vit_large.pth) |
+| ViT-H | 224x224        | 632M    | 84.3%      | [🤗 HF   link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/pretrained/vit_huge.pth)  |
 
 To evaluate ViT-B for example, simply download the pre-trained ViT-B model and save it to <code>./pretrained/vit_base.pth</code>. Then use the script below for evaluation.
 
