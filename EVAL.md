@@ -19,7 +19,6 @@ args=(
 # --model vit_${MODEL}_patch14_224   # for huge
 --finetune ./pretrained/vit_${MODEL}.pth
 --divided_depths $((DEPTH/4)) $((DEPTH/4)) $((DEPTH/4)) $((DEPTH/4)) \
-
 --eval
 --batch_size 1024
 )
