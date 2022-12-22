@@ -12,7 +12,7 @@ We have released our pre-trained models at [🤗 Hugging Face](https://huggingfa
 | ViT-H | 224x224    | 632M    | 84.3%      | [🤗 HF   link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/pretrained/vit_huge.pth)           |
 | ViT-H | 392x392    | 632M    | 85.6%      | [🤗 HF   link](https://huggingface.co/nzl-thu/Model-Assembling/blob/main/pretrained/high_res/vit_huge.pth)  |
 
-1. To evaluate ViT-B for example, simply download the pre-trained ViT-B model and save it to <code>./pretrained/vit_base.pth</code>. Then use the script below for evaluation.
+To evaluate ViT-B for example, simply download the pre-trained ViT-B model and save it to <code>./pretrained/vit_base.pth</code>. Then use the script below for evaluation.
 
 ```bash
 MODEL=base DEPTH=12  # for base
