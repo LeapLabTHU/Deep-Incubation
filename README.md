@@ -14,11 +14,12 @@ This repository contains the official code for [Deep Model Assembling](https://a
 
 ## News
 
+- `Dec 22, 2022`: release all pre-trained models on ImageNet-1K, including models tuned at higher resolutions.
 - `Dec 15, 2022`: release pre-trained models for ViT-B, ViT-L and ViT-H on ImageNet-1K.
 - `Dec 13, 2022`: release pre-trained meta models for ViT-B, ViT-L and ViT-H on ImageNet-1K.
 - `Dec 10, 2022`: release code for training ViT-B, ViT-L and ViT-H on ImageNet-1K.
 
-Our final models and the pre-trained meta models are available at [🤗 Hugging Face](https://huggingface.co/nzl-thu/Model-Assembling). Please follow the instructions in [EVAL.md](EVAL.md) and [TRAINING.md](TRAINING.md) for their usage.
+Our final models and the pre-trained meta models are all available at [🤗 Hugging Face](https://huggingface.co/nzl-thu/Model-Assembling). Please follow the instructions in [EVAL.md](EVAL.md) and [TRAINING.md](TRAINING.md) for their usage.
 
 ## Overview
 

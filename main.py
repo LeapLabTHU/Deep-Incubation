@@ -159,7 +159,7 @@ def get_args_parser():
                         help='number of distributed processes')
     parser.add_argument('--dist_url', default='env://', help='url used to set up distributed training')
 
-    parser.add_argument('--phase', type=str, choices=['PT', 'MT', 'FT', 'E2E'])
+    parser.add_argument('--phase', type=str, choices=['PT', 'MT', 'FT', 'E2E'], default='E2E')
     parser.add_argument('--divided_depths', type=int, default=None, nargs='+')  # depth for each module
     parser.add_argument('--idx', type=int, default=None)  # target module's index in MT
     parser.add_argument('--meta_model', type=str, default='')  # pre-trained meta model path, for MT
