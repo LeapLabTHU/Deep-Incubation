@@ -1,12 +1,12 @@
-# Deep Model Assembling
+# Deep Incubation
 
-This repository contains the official code for [Deep Model Assembling](https://arxiv.org/abs/2212.04129).
+This repository contains the official code for [Deep Incubation: Training Large Models by Divide-and-Conquering](https://arxiv.org/abs/2212.04129).
 
 <p align="center">
     <img src="imgs/teaser.png" width= "450">
 </p>
 
-> **Title**:&emsp;&emsp;[**Deep Model Assembling**](https://arxiv.org/abs/2212.04129)  
+> **Title**:&emsp;&emsp;[**Deep Incubation: Training Large Models by Divide-and-Conquering**](https://arxiv.org/abs/2212.04129)  
 > **Authors**:&nbsp;&nbsp;[Zanlin Ni](https://scholar.google.com/citations?user=Yibz_asAAAAJ&hl=en&oi=ao)\*, [Yulin Wang](https://scholar.google.com/citations?hl=en&user=gBP38gcAAAAJ)\*, Jiangwei Yu, [Haojun Jiang](https://scholar.google.com/citations?hl=en&user=ULmStp8AAAAJ), [Yue Cao](https://scholar.google.com/citations?hl=en&user=iRUO1ckAAAAJ), [Gao Huang](https://scholar.google.com/citations?user=-P9LwcgAAAAJ&hl=en&oi=ao) (Corresponding Author)  
 > **Institute**: Tsinghua University and Beijing Academy of Artificial Intelligence (BAAI)  
 > **Publish**:&nbsp;&nbsp;&nbsp;*arXiv preprint ([arXiv 2212.04129](https://arxiv.org/abs/2212.04129))*  
@@ -19,11 +19,11 @@ This repository contains the official code for [Deep Model Assembling](https://a
 - `Dec 13, 2022`: release pre-trained meta models for ViT-B, ViT-L and ViT-H on ImageNet-1K.
 - `Dec 10, 2022`: release code for training ViT-B, ViT-L and ViT-H on ImageNet-1K.
 
-Our final models and the pre-trained meta models are all available at [🤗 Hugging Face](https://huggingface.co/nzl-thu/Model-Assembling). Please follow the instructions in [EVAL.md](EVAL.md) and [TRAINING.md](TRAINING.md) for their usage.
+Our final models and the pre-trained meta models are all available at [🤗 Hugging Face](https://huggingface.co/nzl-thu/Deep-Incubation). Please follow the instructions in [EVAL.md](EVAL.md) and [TRAINING.md](TRAINING.md) for their usage.
 
 ## Overview
 
-In this paper, we present a divide-and-conquer strategy for training large models. Our algorithm, Model Assembling, divides a large model into smaller modules, optimizes them independently, and then assembles them together. Though conceptually simple, our method significantly outperforms end-to-end (E2E) training in terms of both training efficiency and final accuracy. For example, on ViT-H, Model Assembling outperforms E2E training by **2.7%**, while reducing the training cost by **43%**.
+In this paper, we present a divide-and-conquer strategy for training large models. Our algorithm, Deep Incubation, divides a large model into smaller modules, optimizes them independently, and then assembles them together. Though conceptually simple, our method significantly outperforms end-to-end (E2E) training in terms of both training efficiency and final accuracy. For example, on ViT-H, Model Incubation outperforms E2E training by **2.7%** or achieves similar performance with **4x** less training time.
 
 <p align="center">
     <img src="imgs/ours.png" width= "900">
@@ -60,27 +60,26 @@ See [TRAINING.md](TRAINING.md) for the training instructions.
 ### Results on ImageNet-1K
 
 <p align="center">
-    <img src="./imgs/in1k.png" width= "900">
+    <img src="./imgs/in1k.png" width= "450">
 </p>
 
-### Results on CIFAR-100
+
+### Semantic Segmentation on ADE20K
 
 <p align="center">
-    <img src="./imgs/cifar.png" width= "900">
+    <img src="./imgs/segmentation.png" width= "450">
+</p>
+
+### Object Detection and Instance Segmentation on COCO
+
+<p align="center">
+    <img src="./imgs/detection.png" width= "450">
 </p>
 
 ### Training Efficiency
 
-- Comparing different training budgets
-
 <p align="center">
     <img src="./imgs/efficiency.png" width= "900">
-</p>
-
-- Detailed convergence curves of ViT-Huge
-
-<p align="center">
-    <img src="./imgs/huge_curve.png" width= "450">
 </p>
 
 ### Data Efficiency
@@ -94,8 +93,8 @@ See [TRAINING.md](TRAINING.md) for the training instructions.
 If you find our work helpful, please **star🌟** this repo and **cite📑** our paper. Thanks for your support!
 
 ```
-@article{Ni2022Assemb,
-  title={Deep Model Assembling},
+@article{Ni2022Incub,
+  title={Deep Incubation: Training Large Models by Divide-and-Conquering},
   author={Ni, Zanlin and Wang, Yulin and Yu, Jiangwei and Jiang, Haojun and Cao, Yue and Huang, Gao},
   journal={arXiv preprint arXiv:2212.04129},
   year={2022}
